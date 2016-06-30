@@ -12,23 +12,24 @@ namespace Library
         {
             get
             {
-                throw new NotImplementedException();
+                return 7;
             }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
+            set { }
         }
 
         public override void PrintMediaDetails()
         {
-            throw new NotImplementedException();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Magazine {0} ({1})", Title, Length);
+            Console.WriteLine("Rented on: {0}", RentedDate);
+            Console.WriteLine("Due on: {0}", ReturnDueDate());
+            Console.ResetColor();
         }
 
         public override DateTime ReturnDueDate()
         {
-            throw new NotImplementedException();
+            return RentedDate.AddDays(RentalLength);
         }
     }
 }
